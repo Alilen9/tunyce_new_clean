@@ -1,0 +1,185 @@
+{
+  "home": {
+    "title": "Welcome",
+    "subtitle": "Explore our platform"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Manage your account and settings"
+  },
+  "SettingsPage": {
+    "title": "Account Settings",
+    "nav": {
+      "profile": "Profile",
+      "contact": "Contact",
+      "security": "Security"
+    },
+    "Profile": {
+      "title": "Profile Settings",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "bioLabel": "Bio",
+      "bioPlaceholder": "Tell us about yourself",
+      "profileImageLabel": "Profile Image",
+      "updateButton": "Update Profile"
+    },
+    "Contact": {
+      "title": "Contact Information",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "companyLabel": "Company Name",
+      "companyPlaceholder": "Enter your company name",
+      "addressLabel": "Business Address",
+      "addressPlaceholder": "Enter your business address",
+      "updateButton": "Update Contact Info"
+    },
+    "Security": {
+      "title": "Security",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "Enter new password",
+      "updateButton": "Change Password"
+    }
+  },
+  "PlansPage": {
+    "title": "Choose Your Plan",
+    "subtitle": "Find the perfect plan that fits your needs.",
+    "mostPopular": "Most Popular",
+    "contactSalesButton": "Contact Sales",
+    "getStartedButton": "Get Started",
+    "Plans": {
+      "basic": {
+        "name": "Basic",
+        "price": "$9000",
+        "features": [
+          "Access to standard features",
+          "5 projects",
+          "Basic analytics",
+          "Community support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$290000",
+        "features": [
+          "All Basic features",
+          "Unlimited projects",
+          "Advanced analytics",
+          "Priority support",
+          "Custom branding"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Contact Us",
+        "features": [
+          "All Pro features",
+          "Dedicated account manager",
+          "Custom integrations",
+          "SLA guarantee",
+          "On-premise deployment"
+        ]
+      }
+    }
+  },
+  "UploadAdvertPage": {
+    "title": "Upload Advert",
+    "submissionSuccess": "✅ Your advert has been submitted successfully!",
+    "advertTitleLabel": "Advert Title",
+    "advertTitlePlaceholder": "E.g., FlatFlair KE — July Offer on Elegant Flats",
+    "advertTitleHelp": "Use keywords like company name, product, or promotion for clarity.",
+    "advertDescriptionLabel": "Advert Description",
+    "advertDescriptionPlaceholder": "Briefly describe your advert...",
+    "advertDescriptionHelp": "Include any relevant campaign context.",
+    "uploadFileLabel": "Upload File",
+    "acceptedFormats": "Accepted formats: .png, .jpg, .jpeg, .pdf, .docx, .mp4",
+    "advertTypeLabel": "Advert Type",
+    "learnMoreLink": "Learn more",
+    "selectTypePlaceholder": "Select Type",
+    "type": {
+      "video": "Video",
+      "popup": "Popup",
+      "squeezeback": "Squeezeback",
+      "scroll": "Scroll"
+    },
+    "cancelButton": "Cancel",
+    "submitButton": "Submit Advert"
+  },
+  "DashboardPage": {
+    "title": "Dashboard",
+    "settingsButton": "Settings",
+    "quickActions": {
+      "title": "Quick Actions",
+      "uploadAdvertButton": "Upload Advert",
+      "checkHistoryButton": "Check Advert History"
+    },
+    "stats": {
+      "totalPlays": {
+        "title": "Total Plays"
+      },
+      "peopleReached": {
+        "title": "People Reached"
+      },
+      "lastAd": {
+        "title": "Last Ad Played",
+        "value": "Ladies Handbags"
+      },
+      "totalSpend": {
+        "title": "Total Ad Spend"
+      }
+    },
+    "chart": {
+      "revenueTitle": "Revenue",
+      "adPerformanceTitle": "Ad Performance"
+    },
+    "adsPlayed": {
+      "title": "Ads Played",
+      "table": {
+        "adTitle": "Ad Title",
+        "plays": "Number of Plays"
+      }
+    },
+    "adsData": [
+      {
+        "title": "Summer Sale - Flat Shoes"
+      },
+      {
+        "title": "New Arrivals Jewelry"
+      },
+      {
+        "title": "Ladies Handbags Promo"
+      },
+      {
+        "title": "Back to School Offers"
+      }
+    ],
+    "adHistory": {
+      "title": "Ad Play History",
+      "table": {
+        "adTitle": "Ad Title",
+        "route": "Route",
+        "playedAt": "Played At"
+      }
+    },
+    "adPlayHistory": [
+      {
+        "title": "Summer Sale - Flat Shoes",
+        "route": "Route 102 - CBD to Westlands"
+      },
+      {
+        "title": "New Arrivals Jewelry",
+        "route": "Route 23 - Gikambura to Town"
+      },
+      {
+        "title": "Ladies Handbags Promo",
+        "route": "Route 45 - Thika Road"
+      },
+      {
+        "title": "Back to School Offers",
+        "route": "Route 14 - Pipeline to CBD"
+      }
+    ]
+  }
+
+}

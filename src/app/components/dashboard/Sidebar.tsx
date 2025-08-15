@@ -32,7 +32,8 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
     if (accessToken) {
       // Update links for /dashboard and /advert to external URLs
       setDynamicLinks(links.map(link => {
-        if (link.href === '/dashboard' || link.href === '/advert') {
+        // if (link.href === '/dashboard' || link.href === '/advert') {
+        if (link.href === '/dashboard') {
           return {
             ...link,
             href: `https://advertmanager.tunycemedia.com/?q=${accessToken}`,
@@ -57,7 +58,7 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
           href="/dashboard"
           className="flex items-center gap-3 hover:opacity-90 transition-opacity"
         >
-          <img src={logoPlaceholder} alt="Tunyce Logo" className="h-15 w-15" />
+          <img src={logoPlaceholder} alt="Tunyce Logo" className="h-14 w-14" />
           {!collapsed && (
             <span className="text-xl font-bold tracking-wide text-white">Tunyce</span>
           )}

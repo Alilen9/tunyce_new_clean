@@ -29,7 +29,19 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
 
     // Get access token from sessionStorage
     const accessToken = sessionStorage.getItem('accessToken');
-    
+    if (accessToken) {
+      // Update links for /dashboard and /advert to external URLs
+      setDynamicLinks(links.map(link => {
+        if (link.href === '/dashboard' || link.href === '/advert') {
+          return {
+            ...link,
+            href: `https://advertmanager.tunycemedia.com/?q=${accessToken}`,
+            external: true,
+          };
+        }
+        return { ...link, href: '/dashboard' + link.href, external: false };
+      }));
+    }
   }, []); // Run only once on mount
 
   // Use client-side path for active link highlighting

@@ -4,7 +4,7 @@ import { FeaturedItem } from '@/app/components/dashboard/outlets/featured-items'
 import { LoadingSkeleton } from '@/app/components/dashboard/outlets/Skeleton-List';
 import { Outlet } from '@/types/outletstypes';
 import { IoAdd } from 'react-icons/io5';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useGetOutletsQuery } from '@/store/outletsApi';
 import { Link, useRouter } from '@/i18n/navigation';
 

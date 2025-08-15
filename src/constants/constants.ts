@@ -8,7 +8,6 @@ export const links = [
   { href: '/settings', label: 'Settings', icon: Settings },
 ];
 
-
 export const plansData = [
   {
     name: 'Basic',

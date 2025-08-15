@@ -18,6 +18,24 @@ export interface Outlet {
   longitude?: string | null; // Nullable, max length 20
   created_at?: string; // Example, could be a date string
   updated_at?: string; // Example, could be a date string
+  // Add the goods and services properties here
+  goods: {
+    id: number;
+    name: string;
+    category: {
+      id: number;
+      name: string;
+    };
+    tags: string[];
+  }[];
+  services: {
+    id: number;
+    name: string;
+    category: {
+      id: number;
+      name: string;
+    };
+  }[];
 }
 export interface OutletType {
   id: number;

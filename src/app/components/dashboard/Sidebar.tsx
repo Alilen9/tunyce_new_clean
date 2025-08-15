@@ -57,7 +57,7 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
           href="/dashboard"
           className="flex items-center gap-3 hover:opacity-90 transition-opacity"
         >
-          <img src={logoPlaceholder} alt="Tunyce Logo" className="h-10 w-10" />
+          <img src={logoPlaceholder} alt="Tunyce Logo" className="h-15 w-15" />
           {!collapsed && (
             <span className="text-xl font-bold tracking-wide text-white">Tunyce</span>
           )}

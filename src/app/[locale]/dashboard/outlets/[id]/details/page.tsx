@@ -1,8 +1,8 @@
 // src/app/(dashboard)/advertisements/[id]/report/page.tsx
 // This is a Server Component. DO NOT add 'use client' here.
 
-import React from 'react';
-import MatatuClient from './client-page'; 
+import React from 'react'; 
+import OutletsClient from './client-page';
 
 // Update the interface to reflect that params is a Promise
 interface MatatuDetailsPageProps {
@@ -11,15 +11,15 @@ interface MatatuDetailsPageProps {
 }
 
 // Make your Server Component async and await the params
-const MatatuDetailsPage = async ({ params }: MatatuDetailsPageProps) => { // <-- CHANGED HERE: Added 'async'
+const OutletsDetailsPage = async ({ params }: MatatuDetailsPageProps) => { // <-- CHANGED HERE: Added 'async'
   // Await params to destructure its value
   const { id } = await params; // <-- CHANGED HERE: Await params
   
-  const matatuId = parseInt(id, 10); // Use the awaited 'id'
+  const OutletsId = parseInt(id, 10); // Use the awaited 'id'
 
   console.log("Server Component (Report) - Received Advert ID:", id); // Log the awaited ID
 
-  return <MatatuClient matatuId={matatuId} />;
+  return <OutletsClient OutletsId={OutletsId} />;
 };
 
-export default MatatuDetailsPage;
+export default OutletsDetailsPage;

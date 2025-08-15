@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Lock, User, Phone, LucideIcon } from 'lucide-react';
+import { Mail, Lock, User, Phone } from 'lucide-react';
 import { Transition } from '@headlessui/react';
 import toast from 'react-hot-toast';
 import {
@@ -26,19 +26,12 @@ interface OnStateChangeProps {
   onStateChange: (state: 'login' | 'signup' | 'forgot') => void;
 }
 
-interface InputFieldProps {
-  label: string;
-  type: string;
-  name: string;
-  Icon: LucideIcon; // Use LucideIcon for better type safety
-}
-
 function App() {
   const [cardState, setCardState] = useState<'login' | 'signup' | 'forgot'>('login');
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-slate-100 p-4">
+      <div className="flex items-center bg-[var(--tunyce-maroon)] justify-center min-h-screen p-4">
         <div className="relative w-full max-w-sm h-[500px] perspective-1000">
           <div
             className="absolute w-full h-full transition-transform duration-700 ease-in-out"
@@ -57,7 +50,7 @@ function App() {
                 }}
               >
                 {/* LOGIN */}
-                <div className="absolute w-full h-full backface-hidden bg-white shadow-xl rounded-2xl p-8 flex items-center justify-center">
+                <div className="absolute w-full h-full backface-hidden bg-white shadow-xl p-8 flex items-center justify-center">
                   <Transition
                     as="div"
                     show={cardState === 'login'}
@@ -74,7 +67,7 @@ function App() {
                 </div>
 
                 {/* SIGNUP */}
-                <div className="absolute w-full h-full backface-hidden bg-white shadow-xl rounded-2xl p-8 flex items-center justify-center transform rotate-y-180">
+                <div className="absolute w-full h-full backface-hidden bg-white shadow-xl p-8 flex items-center justify-center transform rotate-y-180">
                   <Transition
                     as="div"
                     show={cardState === 'signup'}
@@ -93,7 +86,7 @@ function App() {
             </div>
 
             {/* BACK (Forgot Password) */}
-            <div className="absolute w-full h-full backface-hidden bg-white shadow-xl rounded-2xl p-8 flex items-center justify-center transform rotate-y-180">
+            <div className="absolute w-full h-full backface-hidden bg-white shadow-xl p-8 flex items-center justify-center transform rotate-y-180">
               <Transition
                 as="div"
                 show={cardState === 'forgot'}

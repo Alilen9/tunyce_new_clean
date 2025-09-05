@@ -134,10 +134,8 @@ export default function MatatuPage() {
   );
 
    const handleViewMatatu = (id: number) => {
-    router.push(`/matatus/${id}/details`);
+    router.push(`/dashboard/matatu/${id}/details`);
   };
-
-  
 
   return (
     <div className="p-6">

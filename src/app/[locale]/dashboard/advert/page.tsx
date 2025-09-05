@@ -10,13 +10,13 @@ export default function Advert() {
         <p className="text-gray-700 mb-4">Manage your advertisements here.</p>
         {/* Add your advert management components here */}
         <a
-              href="https://advertmanager.tunycemedia.com/#/dashboard?tab=analytics"
+              href="https://advertmanager.tunycemedia.com/#/add-advert"
               target="_blank"
               rel="noopener noreferrer"
               className="text-tunyce-maroon font-semibold hover:underline ml-8"
             >
               <button className="bg-[#58181C] text-white font-bold px-6 py-2 rounded-full hover:bg-[#A94C4C] transition-colors duration-300 cursor-pointer">
-                Go to advert manager
+                Go to Create Advert 
               </button>
             </a>
         </div>

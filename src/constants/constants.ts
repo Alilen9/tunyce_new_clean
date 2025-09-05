@@ -1,7 +1,7 @@
 import { Home, Tv,Store,Bus, Settings } from "lucide-react";
 
 export const links = [
-  { href: '/dashboard', label: 'Dashboard', icon: Home },
+  { href: '/', label: 'Dashboard', icon: Home },
   { href: '/advert', label: 'Advert', icon: Tv },
   { href: '/outlets', label: 'Outlets', icon: Store },
   { href: '/matatu', label: 'Matatu', icon: Bus },  // ← FIXED THIS

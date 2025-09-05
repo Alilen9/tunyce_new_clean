@@ -33,7 +33,7 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
       // Update links for /dashboard and /advert to external URLs
       setDynamicLinks(links.map(link => {
         // if (link.href === '/dashboard' || link.href === '/advert') {
-        if (link.href === '/dashboard') {
+        if (link.href === '/advert') {
           return {
             ...link,
             href: `https://advertmanager.tunycemedia.com/?q=${accessToken}`,

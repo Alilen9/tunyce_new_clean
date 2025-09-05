@@ -6,6 +6,8 @@ import { FaUpload } from 'react-icons/fa'
 import { useTranslations } from 'next-intl'
 import { Settings } from 'lucide-react'
 import Chart from "@/app/components/dashboard/Charts"
+import OutletList from '@/app/components/dashboard/outlets/OutletList'
+import MatatuList from '@/app/components/dashboard/matatu/MatatuList'
 
 const DashboardPage = () => {
   const t = useTranslations('DashboardPage')
@@ -13,20 +15,6 @@ const DashboardPage = () => {
   // Token for link
   const accessToken = typeof window !== 'undefined' ? sessionStorage.getItem('accessToken') : null
   const linkHref = `https://advertmanager.tunycemedia.com/?q=${accessToken}`
-
-  // Matatu Data
-  const matatuData = [
-    { id: 1, name: "Matatu One", route: "CBD - Westlands" },
-    { id: 2, name: "Matatu Two", route: "CBD - Rongai" },
-    { id: 3, name: "Matatu Three", route: "CBD - Thika" },
-  ]
-
-  // Outlets Data
-  const outletsData = [
-    { id: 1, name: "Outlet One", location: "Westlands" },
-    { id: 2, name: "Outlet Two", location: "Rongai" },
-    { id: 3, name: "Outlet Three", location: "Thika" },
-  ]
 
   return (
     <div className="p-2 bg-red-50 min-h-screen">
@@ -63,50 +51,14 @@ const DashboardPage = () => {
         </div>
       </div>
 
-      {/* Matatus Table */}
-      <div className="bg-white shadow p-6 mb-6 border border-gray-200">
-        <h3 className="text-xl font-semibold text-[#58181C] mb-4">Matatus</h3>
-        <table className="w-full table-auto text-left border-collapse">
-          <thead>
-            <tr className="bg-gray-100 text-gray-700">
-              <th className="p-3 border-b border-t">ID</th>
-              <th className="p-3 border-b border-t">Name</th>
-              <th className="p-3 border-b border-t">Route</th>
-            </tr>
-          </thead>
-          <tbody>
-            {matatuData.map((matatu) => (
-              <tr key={matatu.id} className="hover:bg-gray-50">
-                <td className="p-3 border-b text-gray-800">{matatu.id}</td>
-                <td className="p-3 border-b text-gray-800">{matatu.name}</td>
-                <td className="p-3 border-b text-gray-600">{matatu.route}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Matatus List */}
+      <div className="mb-6">
+        <MatatuList />
       </div>
 
-      {/* Outlets Table */}
-      <div className="bg-white shadow p-6 border border-gray-200">
-        <h3 className="text-xl font-semibold text-[#58181C] mb-4">Outlets</h3>
-        <table className="w-full table-auto text-left border-collapse">
-          <thead>
-            <tr className="bg-gray-100 text-gray-700">
-              <th className="p-3 border-b border-t">ID</th>
-              <th className="p-3 border-b border-t">Name</th>
-              <th className="p-3 border-b border-t">Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            {outletsData.map((outlet) => (
-              <tr key={outlet.id} className="hover:bg-gray-50">
-                <td className="p-3 border-b text-gray-800">{outlet.id}</td>
-                <td className="p-3 border-b text-gray-800">{outlet.name}</td>
-                <td className="p-3 border-b text-gray-600">{outlet.location}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Outlets List */}
+      <div className="mb-6">
+        <OutletList />
       </div>
     </div>
   )

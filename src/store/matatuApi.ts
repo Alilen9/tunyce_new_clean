@@ -26,6 +26,10 @@ export interface Matatu {
   drivers: number[];
 }
 
+export interface MatatuByIdApiResponse {
+  message: Matatu;
+}
+
 export interface SaccoMlt {
   id: number;
   name: string;
@@ -66,9 +70,9 @@ export const matatuApi = createApi({
       query: () => '/matatu/matatus',
     }),
     
-    getMatatuById: builder.query<unknown, {matatuId: number}>({
-      query: ({matatuId}) => `mlt/matatus/${matatuId}/`,
-
+    getMatatuById: builder.query<Matatu, {matatuId: number}>({
+      query: ({matatuId}) => `/matatu/matatu/${matatuId}/`,
+      transformResponse: (response: MatatuByIdApiResponse) => response.message,
     }),
     // The createMatatu mutation now correctly expects a single number for 'route'
     createMatatu: builder.mutation<Matatu, Pick<Matatu, 'name' | 'number_plate' | 'number_of_seats' | 'no_of_screens' | 'sacco'> & { route?: number[] }>({

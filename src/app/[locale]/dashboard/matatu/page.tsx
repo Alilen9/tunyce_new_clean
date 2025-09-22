@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Link, useRouter } from '@/i18n/navigation';
 import { useGetMatatuBysaccosQuery, useGetMatatuByfaultsQuery, useGetMatatusQuery, Matatu } from '@/store/matatuApi';
 import getPaginationRange from '@/app/components/utils/getpaginationpage';
@@ -56,14 +56,15 @@ const FaultDisplay: React.FC<{ matatuId: number }> = ({ matatuId }) => {
   );
 };
 
-
-
-
 export default function MatatuPage() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+
+  const handleViewMatatu = useCallback((id: number) => {
+    router.push(`/dashboard/matatu/${id}/details`);
+  }, [router]);
 
   /// We are now explicitly defining the type of data returned by the hook
   const { data: apiResponse, isLoading, error } = useGetMatatusQuery() as {
@@ -105,7 +106,7 @@ export default function MatatuPage() {
     <div className="p-4 text-center text-muted-foreground">
     No matatus found. Please add one.
     </div>
-    <div className="flex bg-red justify-center gap-4 mt-4">
+    <div className="flex justify-center gap-4 mt-4">
       <Link href="matatu-register">
         <button className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
         Register Matatu
@@ -133,13 +134,19 @@ export default function MatatuPage() {
     currentPage * itemsPerPage
   );
 
-   const handleViewMatatu = (id: number) => {
-    router.push(`/dashboard/matatu/${id}/details`);
-  };
-
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Matatu Management</h1>
+
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search matatus..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full p-2 border border-input rounded-md bg-background text-foreground placeholder-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        />
+      </div>
 
       {filteredMatatus.length > 0 ? (
         <>

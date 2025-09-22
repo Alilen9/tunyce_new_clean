@@ -1,32 +1,16 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
+
+import { useIsMobile } from "./use-mobile"
 import { cn } from "@/lib/utils"
-import { Input } from "@headlessui/react"
+import { Button } from "./button"
+import { Input } from "./input"
 import { Separator } from "./separator"
 import { Sheet, SheetContent } from "./sheet"
 import { Skeleton } from "./skeleton"
-import { TooltipProvider, TooltipContent, TooltipTrigger, Tooltip } from "./tooltip"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip"
 import { PanelLeft } from "lucide-react"
-import { Button } from "./button"
-
-// Simple hook to detect mobile viewport
-function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState(
-    typeof window !== "undefined" ? window.innerWidth < 768 : false
-  );
-
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth < 768);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return isMobile;
-}
-
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

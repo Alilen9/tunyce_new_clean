@@ -1,12 +1,11 @@
 import * as React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { DayPicker } from "react-day-picker";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./button";
+import { DayPicker } from "react-day-picker";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
-function Calendar({
+function Calendar({ 
   className,
   classNames,
   showOutsideDays = true,
@@ -51,29 +50,11 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        // The 'Button' component slot is used for nav buttons.
-        // We need to conditionally render based on the button type.
-        // `react-day-picker` passes a `name` prop to distinguish these buttons.
-        Button: ({ name, ...props }) => {
-          if (name === 'previous') {
-            return (
-              <button {...props}>
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-            );
-          }
-          if (name === 'next') {
-            return (
-              <button {...props}>
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            );
-          }
-          // Default button rendering for other buttons within DayPicker
-          return <button {...props} />;
-        },
-      }}
+      // components={{
+      //   // The `components` prop allows you to provide your own components
+      //   IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+      //   IconRight: () => <ChevronRight className="h-4 w-4" />,
+      // }}
       {...props}
     />
   );

@@ -1,10 +1,9 @@
-"use client"
+'use client'
 
 import React from 'react'
 import { Button } from '@/app/components/dashboard/ui/buttons'
 import { FaUpload } from 'react-icons/fa'
 import { useTranslations } from 'next-intl'
-import { Settings } from 'lucide-react'
 import Chart from "@/app/components/dashboard/Charts"
 import OutletList from '@/app/components/dashboard/outlets/OutletList'
 import MatatuList from '@/app/components/dashboard/matatu/MatatuList'
@@ -12,54 +11,65 @@ import MatatuList from '@/app/components/dashboard/matatu/MatatuList'
 const DashboardPage = () => {
   const t = useTranslations('DashboardPage')
 
-  // Token for link
   const accessToken = typeof window !== 'undefined' ? sessionStorage.getItem('accessToken') : null
   const linkHref = `https://advertmanager.tunycemedia.com/?q=${accessToken}`
 
   return (
-    <div className="p-2 bg-red-50 min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-red-50 to-white p-4 sm:p-6">
+      
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-[#58181C]">{t('title')}</h2>
-        <Button
-          className="flex items-center gap-2 bg-gray-200 text-gray-700 hover:bg-gray-300"
-          onClick={() => window.location.href = '/dashboard'}
-        >
-          <Settings size={16} />
-          {t('settingsButton')}
-        </Button>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[#58181C]">
+          {t('title')}
+        </h1>
+        <p className="text-gray-600 sm:text-lg">
+          Welcome back! Here's what's happening with your dashboard.
+        </p>
       </div>
 
       {/* Quick Actions */}
-      <div className="mb-6">
-        <h3 className="text-xl font-semibold text-[#58181C] mb-4">{t('quickActions.title')}</h3>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#58181C] mb-4">
+          {t('quickActions.title')}
+        </h2>
         <div className="flex flex-wrap gap-4">
-          <Button className="flex items-center gap-2 bg-[#F4C542] font-bold hover:bg-[#E8B93D]" onClick={() => window.location.href = linkHref}>
-            <FaUpload size={16} />
+          <Button
+            className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-800 font-bold px-5 py-3 rounded-xl shadow-md hover:scale-105 transform transition"
+            onClick={() => window.location.href = linkHref}
+          >
+            <FaUpload size={18} />
             {t('quickActions.uploadAdvertButton')}
           </Button>
+          {/* You can add more quick action buttons here */}
         </div>
-      </div>
+      </section>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white shadow p-4 border border-gray-100">
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 w-full hover:shadow-xl transition">
           <Chart title={t('chart.revenueTitle')} />
         </div>
-        <div className="bg-white shadow p-4 border border-gray-100">
+        <div className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 w-full hover:shadow-xl transition">
           <Chart title={t('chart.adPerformanceTitle')} />
         </div>
-      </div>
+      </section>
 
       {/* Matatus List */}
-      <div className="mb-6">
-        <MatatuList />
-      </div>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#58181C] mb-4">Matatus</h2>
+        <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-100">
+          <MatatuList />
+        </div>
+      </section>
 
       {/* Outlets List */}
-      <div className="mb-6">
-        <OutletList />
-      </div>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#58181C] mb-4">Outlets</h2>
+        <div className="bg-white rounded-xl shadow-lg p-4 border border-gray-100">
+          <OutletList />
+        </div>
+      </section>
+
     </div>
   )
 }

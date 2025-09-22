@@ -1,11 +1,11 @@
-'use client'; // <-- IMPORTANT: This directive must be at the very top of this file
+'use client'; 
 
 import React from 'react';
 import { ImSpinner2 } from 'react-icons/im';
 import { IoWarning } from 'react-icons/io5';
 import Link from 'next/link';
 import { FaBackward, FaCheckCircle, FaTimesCircle, FaTools, FaWrench } from 'react-icons/fa';
-import { Car, Users, Monitor} from 'lucide-react'; // More relevant icons for matatus
+import { Car, Users, Monitor } from 'lucide-react'; // More relevant icons for matatus
 import Image from 'next/image';
 import { useGetMatatuByIdQuery } from '@/store/matatuApi';
 import { Button } from '@/app/components/dashboard/ui/buttons';

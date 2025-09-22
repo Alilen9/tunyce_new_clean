@@ -98,7 +98,7 @@ export function OutletRegistrationForm() {
         }
       }
     },
-    [createOutlet, formData]
+    [createOutlet, router, formData]
   );
 
   // Determine if form is disabled

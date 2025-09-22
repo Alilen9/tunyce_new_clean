@@ -2,6 +2,7 @@
 
 import { links } from '@/constants/constants';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export default function Sidebar({ collapsed }: { collapsed: boolean }) {
@@ -58,7 +59,8 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
           href="/dashboard"
           className="flex items-center gap-3 hover:opacity-90 transition-opacity"
         >
-          <img src={logoPlaceholder} alt="Tunyce Logo" className="h-14 w-14" />
+          <Image src={logoPlaceholder} alt="Tunyce Logo" width={14} height={14} className="h-14 w-14" />
+        
           {!collapsed && (
             <span className="text-xl font-bold tracking-wide text-white">Tunyce</span>
           )}
